@@ -45,7 +45,7 @@ function App() {
     }).format(date);
   }
 
-  useEffect(function () {
+  useEffect(() => {
     const id = setInterval(function () {
       setTime(formatTime(new Date()));
     }, 1000);
