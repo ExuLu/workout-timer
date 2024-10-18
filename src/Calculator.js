@@ -18,7 +18,7 @@ const Calculator = ({ workouts, allowSound }) => {
   };
 
   const handleDec = () => {
-    setDuration((duration) => Math.ceil(duration) - 1);
+    setDuration((duration) => (duration > 1 ? Math.ceil(duration) - 1 : 0));
   };
 
   const mins = Math.floor(duration);
