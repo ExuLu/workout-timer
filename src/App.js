@@ -32,7 +32,7 @@ const App = () => {
       },
       {
         name: 'Core only',
-        numExercises: partOfDay === 'AM' ? 5 : 4,
+        numExercises: partOfDay === 'AM' ? 7 : 5,
       },
     ],
     [partOfDay]
