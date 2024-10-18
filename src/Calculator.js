@@ -14,11 +14,11 @@ const Calculator = ({ workouts, allowSound }) => {
   }, [number, sets, speed, durationBreak]);
 
   const handleInc = () => {
-    setDuration((duration) => duration + 1);
+    setDuration((duration) => Math.floor(duration) + 1);
   };
 
   const handleDec = () => {
-    setDuration((duration) => duration - 1);
+    setDuration((duration) => Math.ceil(duration) - 1);
   };
 
   const mins = Math.floor(duration);
