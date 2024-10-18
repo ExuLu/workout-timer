@@ -14,10 +14,12 @@ const Calculator = ({ workouts, allowSound }) => {
   }, [number, sets, speed, durationBreak]);
 
   const handleInc = () => {
+    playSound();
     setDuration((duration) => Math.floor(duration) + 1);
   };
 
   const handleDec = () => {
+    playSound();
     setDuration((duration) => (duration > 1 ? Math.ceil(duration) - 1 : 0));
   };
 
