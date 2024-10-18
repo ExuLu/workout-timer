@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 import Calculator from './Calculator';
 import ToggleSounds from './ToggleSounds';
 
-function App() {
+const App = () => {
   const [allowSound, setAllowSound] = useState(true);
   const [time, setTime] = useState(formatTime(new Date()));
 
@@ -35,18 +35,17 @@ function App() {
     [partOfDay]
   );
 
-  function formatTime(date) {
-    return new Intl.DateTimeFormat('en', {
+  const formatTime = (date) =>
+    new Intl.DateTimeFormat('en', {
       month: 'short',
       year: '2-digit',
       hour: '2-digit',
       minute: '2-digit',
       second: '2-digit',
     }).format(date);
-  }
 
   useEffect(() => {
-    const id = setInterval(function () {
+    const id = setInterval(() => {
       setTime(formatTime(new Date()));
     }, 1000);
 
@@ -61,6 +60,6 @@ function App() {
       <Calculator workouts={workouts} allowSound={allowSound} />
     </main>
   );
-}
+};
 
 export default App;

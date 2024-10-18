@@ -11,7 +11,7 @@ const Calculator = ({ workouts, allowSound }) => {
   const mins = Math.floor(duration);
   const seconds = (duration - mins) * 60;
 
-  const playSound = function () {
+  const playSound = () => {
     if (!allowSound) return;
     const sound = new Audio(clickSound);
     sound.play();
