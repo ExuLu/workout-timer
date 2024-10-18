@@ -1,6 +1,9 @@
 import { useEffect, useMemo, useState } from 'react';
+
 import Calculator from './Calculator';
 import ToggleSounds from './ToggleSounds';
+
+import { formatTime } from './utils';
 
 const App = () => {
   const [allowSound, setAllowSound] = useState(true);
@@ -34,15 +37,6 @@ const App = () => {
     ],
     [partOfDay]
   );
-
-  const formatTime = (date) =>
-    new Intl.DateTimeFormat('en', {
-      month: 'short',
-      year: '2-digit',
-      hour: '2-digit',
-      minute: '2-digit',
-      second: '2-digit',
-    }).format(date);
 
   useEffect(() => {
     const id = setInterval(() => {

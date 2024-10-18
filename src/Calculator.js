@@ -1,4 +1,5 @@
 import { memo, useState } from 'react';
+
 import clickSound from './ClickSound.m4a';
 
 const Calculator = ({ workouts, allowSound }) => {
