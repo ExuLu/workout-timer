@@ -23,6 +23,10 @@ const Calculator = ({ workouts, allowSound }) => {
     playSound();
   }, [duration, allowSound]);
 
+  useEffect(() => {
+    document.title = `Your ${number}-exercise workout`;
+  }, [number]);
+
   const handleInc = () => setDuration((duration) => Math.floor(duration) + 1);
   const handleDec = () =>
     setDuration((duration) => (duration > 1 ? Math.ceil(duration) - 1 : 0));
